@@ -41,7 +41,7 @@ export default function Home({ allPostsData }) {
         <h1 className="title">
           Read{' '}
           <Link href="/posts/first-post">
-            <a>this page!</a>
+            <a>this page2!</a>
           </Link>
         </h1>
 
