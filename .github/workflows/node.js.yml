@@ -26,30 +26,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: npm install
+      - name: install
         run: yarn
         env:
           CI: true
 
       - name: Run linter
-        run: echo lint
-
-      - name: Build
-        run: yarn build
-
-      - name: Deploy on Zeit staging
-        if: github.event_name == 'pull_request'
-        uses: amondnet/now-deployment@v2
-        with:
-          zeit-token: ${{ secrets.VERCEL_TOKEN }}
-          now-org-id: ${{ secrets.ORG_ID }}
-          now-project-id: ${{ secrets.PROJECT_ID }}
-
-      - name: Deploy on Zeit production
-        if: github.event_name == 'push'
-        uses: amondnet/now-deployment@v2
-        with:
-          zeit-token: ${{ secrets.VERCEL_TOKEN }}
-          now-org-id: ${{ secrets.ORG_ID }}
-          now-project-id: ${{ secrets.PROJECT_ID }}
-          now-args: "--prod "
+        run: echo 'linting'
