@@ -27,15 +27,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: npm install
-        run: make install
+        run: echo install
         env:
           CI: true
 
       - name: Run linter
-        run: make lint
+        run: echo lint
 
       - name: Build
-        run: make build
+        run: echo build
 
       - name: Deploy on Zeit staging
         if: github.event_name == 'pull_request'
