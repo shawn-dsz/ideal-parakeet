@@ -35,7 +35,7 @@ jobs:
         run: echo lint
 
       - name: Build
-        run: echo build
+        run: yarn build
 
       - name: Deploy on Zeit staging
         if: github.event_name == 'pull_request'
